@@ -1,0 +1,37 @@
+get:
+  summary: List all minifigures
+  description:
+    $ref: './minifigures#description.md'
+  operationId: listMinifigures
+  security: []
+  tags:
+    - minifigures
+  parameters:
+    - $ref: '../../_parameters/query/limit.yaml'
+    - $ref: '../../_parameters/query/skip.yaml'
+    - $ref: '../../_parameters/query/sort.yaml'
+    - $ref: '../../_parameters/query/filter.yaml'
+    - $ref: '../../_parameters/query/count.yaml'
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../_schemas/Minifigure.yaml'
+      headers:
+        $ref: '../../_headers/defaultListHeaders.yaml'
+    '400':
+      $ref: '../../_responses/BadRequestError.yaml'
+    '401':
+      $ref: '../../_responses/UnauthenticatedError.yaml'
+    '403':
+      $ref: '../../_responses/PermissionDeniedError.yaml'
+    '422':
+      $ref: '../../_responses/InvalidArgumentError.yaml'
+    '503':
+      $ref: '../../_responses/UnavailableError.yaml'
+    '5XX':
+      $ref: '../../_responses/InternalError.yaml'

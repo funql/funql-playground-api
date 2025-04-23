@@ -1,0 +1,11 @@
+﻿type: string
+enum:
+  - BOX
+  - POLYBAG
+description: |
+  The packaging type:
+  
+  - `BOX` - Box.
+  - `POLYBAG` - Polybag.
+examples:
+  - BOX

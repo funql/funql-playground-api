@@ -1,0 +1,27 @@
+# common
+ProblemDetails:
+  $ref: './_schemas/ProblemDetails.yaml'
+Error:
+  $ref: './_schemas/Error.yaml'
+
+# minifigures
+Minifigure:
+  $ref: './minifigures/_schemas/Minifigure.yaml'
+
+# designers
+Designer:
+  $ref: './designers/_schemas/Designer.yaml'
+
+# sets
+Category:
+  $ref: './sets/_schemas/Category.yaml'
+PackagingType:
+  $ref: './sets/_schemas/PackagingType.yaml'
+Region:
+  $ref: './sets/_schemas/Region.yaml'
+Set:
+  $ref: './sets/_schemas/Set.yaml'
+SetMinifigure:
+  $ref: './sets/_schemas/SetMinifigure.yaml'
+Theme:
+  $ref: './sets/_schemas/Theme.yaml'

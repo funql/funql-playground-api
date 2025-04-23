@@ -1,0 +1,14 @@
+description: |
+  Invalid argument error. This is different from status `400` in that the syntax is correct (e.g. correct JSON format), 
+  but one or more values are invalid (e.g. an integer value is greater than the specified maximum).
+content:
+  application/problem+json:
+    schema:
+      $ref: '../_schemas/ProblemDetails.yaml'
+    example:
+      type: https://datatracker.ietf.org/doc/html/rfc9110#section-15.5.21
+      title: Invalid argument
+      status: 422
+      errors:
+        - location: name
+          message: "'name' is required"

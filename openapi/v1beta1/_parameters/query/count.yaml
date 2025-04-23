@@ -1,0 +1,8 @@
+name: count
+in: query
+description:
+  $ref: './count#description.md'
+required: false
+schema:
+  type: boolean
+  default: false

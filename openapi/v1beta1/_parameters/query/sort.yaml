@@ -1,0 +1,8 @@
+name: sort
+in: query
+description:
+  $ref: './sort#description.md'
+required: false
+schema:
+  type: string
+  default: ''

@@ -1,0 +1,9 @@
+description: Unavailable error
+content:
+  application/problem+json:
+    schema:
+      $ref: '../_schemas/ProblemDetails.yaml'
+    example:
+      type: https://datatracker.ietf.org/doc/html/rfc9110#section-15.6.4
+      title: The server was unable to process the request
+      status: 503

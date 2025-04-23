@@ -1,0 +1,9 @@
+description: Permission denied error
+content:
+  application/problem+json:
+    schema:
+      $ref: '../_schemas/ProblemDetails.yaml'
+    example:
+      type: https://datatracker.ietf.org/doc/html/rfc9110#section-15.5.4
+      title: The user is not authorized to make this request
+      status: 403

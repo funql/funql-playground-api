@@ -1,0 +1,7 @@
+﻿# Convenience file with default headers for a 'list' operation, which can be used to easily add default header
+# definitions to a response definition like so:
+# 
+# headers:
+#   $ref: './defaultListHeaders.yaml'
+Total-Count:
+  $ref: './Total-Count.yaml'

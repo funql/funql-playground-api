@@ -1,0 +1,27 @@
+﻿type: string
+enum:
+  - BATMAN
+  - CITY
+  - CLASSIC
+  - HARRY_POTTER
+  - ICONS
+  - IDEAS
+  - LORD_OF_THE_RINGS
+  - MARVEL
+  - STAR_WARS
+  - TECHNIC
+description: |
+  The theme:
+  
+  - `BATMAN` - Batman.
+  - `CITY` - City.
+  - `CLASSIC` - Classic.
+  - `HARRY_POTTER` - Harry Potter.
+  - `ICONS` - Icons.
+  - `IDEAS` - Ideas.
+  - `LORD_OF_THE_RINGS` - Lord of the Rings.
+  - `MARVEL` - Marvel.
+  - `STAR_WARS` - Star Wars.
+  - `TECHNIC` - Technic.
+examples:
+  - STAR_WARS

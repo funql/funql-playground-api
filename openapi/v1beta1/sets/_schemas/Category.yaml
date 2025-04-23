@@ -1,0 +1,13 @@
+﻿type: string
+enum:
+  - MOVIES
+  - VEHICLES
+  - ULTIMATE_COLLECTOR_SERIES
+description: |
+  The category:
+  
+  - `MOVIES` - Movies.
+  - `VEHICLES` - Vehicles.
+  - `ULTIMATE_COLLECTOR_SERIES` - Ultimate Collector Series.
+examples:
+  - MOVIES

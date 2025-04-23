@@ -1,0 +1,21 @@
+description: The designer information 
+type: object
+required:
+  - name
+  # Read-only
+  - id
+properties:
+  id:
+    # Returned by GET, not used in POST/PUT/PATCH
+    description: The ID of the designer
+    type: string
+    format: uuid
+    readOnly: true
+    examples:
+      - 9535bfa7-341e-4608-93a4-0cd8c5055acd
+  name:
+    description: The name of the designer
+    type: string
+    maxLength: 255
+    examples:
+      - Hans Burkhard Schlömer

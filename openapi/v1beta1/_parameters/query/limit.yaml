@@ -1,0 +1,13 @@
+name: limit
+in: query
+description:
+  $ref: './limit#description.md'
+required: false
+schema:
+  type: integer
+  format: int32
+  minimum: 0
+  maximum: 100
+  default: 100
+  examples:
+    - 100

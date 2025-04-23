@@ -1,0 +1,9 @@
+description: Already exists error
+content:
+  application/problem+json:
+    schema:
+      $ref: '../_schemas/ProblemDetails.yaml'
+    example:
+      type: https://datatracker.ietf.org/doc/html/rfc9110#section-15.5.10
+      title: The request tried to create a resource that already exists
+      status: 409

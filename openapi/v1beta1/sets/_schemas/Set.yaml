@@ -1,0 +1,102 @@
+description: The set information 
+type: object
+required:
+  - name
+  - setNumber
+  - itemNumbers
+  - pieces
+  - price
+  - designerId
+  - launchTime
+  - packagingType
+  - theme
+  - categories
+  # Read-only
+  - id
+  - designer
+properties:
+  id:
+    # Returned by GET, not used in POST/PUT/PATCH
+    description: The ID of the set
+    type: string
+    format: uuid
+    readOnly: true
+    examples:
+      - a41528f1-9ec0-46b1-8705-74e71ee6d0b0
+  name:
+    description: The name of the set
+    type: string
+    maxLength: 255
+    examples:
+      - LEGO Star Wars Millennium Falcon
+  setNumber:
+    description: The number of the set
+    type: integer
+    format: int32
+    minimum: 0
+    examples:
+      - 75192
+  itemNumbers:
+    description: A map where keys are strings of `Region` and values are numbers
+    type: object
+    additionalProperties:
+      type: integer
+      format: int32
+      minimum: 0
+    examples:
+      - EUROPE: 6175770
+        NORTH_AMERICA: 6175771
+  pieces:
+    description: The number of pieces in the set
+    type: integer
+    format: int32
+    minimum: 0
+    examples:
+      - 7541
+  price:
+    description: The price of the set in euro
+    type: number
+    format: float
+    multipleOf: 0.01
+    examples:
+      - 849.99
+  designerId:
+    description: The ID of the designer that designed the set
+    type: string
+    format: uuid
+    examples:
+      - 9535bfa7-341e-4608-93a4-0cd8c5055acd
+  designer:
+    # Returned by GET, not used in POST/PUT/PATCH
+    readOnly: true
+    allOf:
+      - $ref: '../../designers/_schemas/Designer.yaml'
+  launchTime:
+    description: The date and time at which the set was launched
+    type: string
+    format: date-time
+    examples:
+      - '2017-10-01T00:00:00.000Z'
+  packagingType:
+    description: The packaging type of the set
+    allOf:
+      - $ref: './PackagingType.yaml'
+  theme:
+    description: The theme of the set
+    allOf:
+      - $ref: './Theme.yaml'
+  categories:
+    description: The categories of the set
+    type: array
+    items:
+      $ref: './Category.yaml'
+    examples:
+      -
+        - MOVIES
+        - VEHICLES
+        - ULTIMATE_COLLECTOR_SERIES
+  minifigures:
+    description: The minifigures in the set
+    type: array
+    items:
+      $ref: './SetMinifigure.yaml'

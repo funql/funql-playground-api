@@ -1,0 +1,1 @@
+The `count` query string parameter defines whether to provide a count of the total number of results.

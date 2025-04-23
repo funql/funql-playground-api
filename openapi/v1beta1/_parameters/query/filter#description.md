@@ -1,0 +1,1 @@
+The `filter` query string parameter restricts the data returned from your request.

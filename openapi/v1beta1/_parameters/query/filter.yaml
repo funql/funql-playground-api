@@ -1,0 +1,8 @@
+name: filter
+in: query
+description:
+  $ref: './filter#description.md'
+required: false
+schema:
+  type: string
+  default: ''

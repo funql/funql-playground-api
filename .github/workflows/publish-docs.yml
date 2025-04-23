@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: publish-docs
+
+on:
+  # Allow running the workflow manually from the GitHub UI
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      # Only run on changes to openapi
+      - ".github/workflows/publish-docs.yml"
+      - "openapi/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      # Only run on changes to openapi
+      - ".github/workflows/publish-docs.yml"
+      - "openapi/**"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./openapi
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: ./openapi/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Bundle OpenAPI spec
+        run: npm run bundle
+
+      - name: Lint OpenAPI spec
+        run: npm run lint
+
+      - name: Build HTML docs
+        run: npm run build-docs
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./openapi/build
+          cname: oas.play.funql.io
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"

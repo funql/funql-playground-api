@@ -1,0 +1,18 @@
+AlreadyExistsError:
+  $ref: './_responses/AlreadyExistsError.yaml'
+BadRequestError:
+  $ref: './_responses/BadRequestError.yaml'
+EmptyResponse:
+  $ref: './_responses/EmptyResponse.yaml'
+InternalError:
+  $ref: './_responses/InternalError.yaml'
+InvalidArgumentError:
+  $ref: './_responses/InvalidArgumentError.yaml'
+NotFoundError:
+  $ref: './_responses/NotFoundError.yaml'
+PermissionDeniedError:
+  $ref: './_responses/PermissionDeniedError.yaml'
+UnauthenticatedError:
+  $ref: './_responses/UnauthenticatedError.yaml'
+UnavailableError:
+  $ref: './_responses/UnavailableError.yaml'

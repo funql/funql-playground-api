@@ -1,0 +1,29 @@
+﻿description: The set minifigure information
+type: object
+required:
+  - id
+  - quantity
+  # Read-only
+  - name
+properties:
+  id:
+    description: The ID of the minifigure
+    type: string
+    format: uuid
+    examples:
+      - d7150c2a-f093-42e4-b32f-45be67eaf43c
+  name:
+    # Returned by GET, not used in POST/PUT/PATCH
+    description: The name of the minifigure
+    type: string
+    maxLength: 255
+    readOnly: true
+    examples:
+      - 'SW0841: Han Solo, Old'
+  quantity:
+    description: The quantity of the minifigure
+    type: integer
+    format: int32
+    minimum: 1
+    examples:
+      - 1

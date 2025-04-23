@@ -1,0 +1,11 @@
+﻿type: string
+enum:
+  - EUROPE
+  - NORTH_AMERICA
+description: |
+  The region:
+  
+  - `EUROPE` - Europe.
+  - `NORTH_AMERICA` - North America.
+examples:
+  - EUROPE

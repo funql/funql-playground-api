@@ -1,0 +1,6 @@
+description: Total amount of available results. Only included if query string parameter `count=true` was set.
+required: false
+schema:
+  type: integer
+  examples:
+    - 70

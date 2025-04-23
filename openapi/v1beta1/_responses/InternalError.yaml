@@ -1,0 +1,9 @@
+description: Internal server error
+content:
+  application/problem+json:
+    schema:
+      $ref: '../_schemas/ProblemDetails.yaml'
+    example:
+      type: https://tools.ietf.org/html/rfc9110#section-15.6.1
+      title: Internal server error
+      status: 500

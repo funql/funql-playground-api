@@ -1,0 +1,1 @@
+The `sort` query string parameter sorts the data returned from your request.

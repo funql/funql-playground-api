@@ -1,0 +1,57 @@
+openapi: 3.1.0
+
+info:
+  title: FunQL Playground API
+  summary: Definition of the FunQL Playground API.
+  description:
+    $ref: './info#description.md'
+  contact:
+    name: FunQL Playground API
+    url: https://github.com/funql/funql-playground-api
+  license:
+    name: Creative Commons Attribution Share Alike 4.0 International
+    url: https://github.com/funql/funql-playground-api/blob/main/openapi/LICENSE
+  version: 1.0.0
+
+tags:
+  # minifigures
+  - name: minifigures
+    description: Minifigures API
+    
+  # designers
+  - name: designers
+    description: Designers API
+    
+  # sets
+  - name: sets
+    description: Sets API
+    
+servers:
+  - url: 'https://api.play.funql.io/v1beta1'
+
+paths:
+  # minifigures
+  /minifigures:
+    $ref: './minifigures/_paths/minifigures.yaml'
+    
+  # designers
+  /designers:
+    $ref: './designers/_paths/designers.yaml'
+    
+  # sets
+  /sets:
+    $ref: './sets/_paths/sets.yaml'
+    
+components:
+  # Reusable schemas (data models)
+  schemas:
+    $ref: './_schemas.yaml'
+  # Reusable path, query, header and cookie parameters
+  parameters:
+    $ref: './_parameters.yaml'
+  # Reusable responses, such as 400 Bad Request
+  responses:
+    $ref: './_responses.yaml'
+  # Reusable response headers
+  headers:
+    $ref: './_headers.yaml'

@@ -1,0 +1,12 @@
+# common
+# query
+count:
+  $ref: './_parameters/query/count.yaml'
+filter:
+  $ref: './_parameters/query/filter.yaml'
+limit:
+  $ref: './_parameters/query/limit.yaml'
+skip:
+  $ref: './_parameters/query/skip.yaml'
+sort:
+  $ref: './_parameters/query/sort.yaml'

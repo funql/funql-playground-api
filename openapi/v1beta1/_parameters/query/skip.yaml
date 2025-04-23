@@ -1,0 +1,12 @@
+name: skip
+in: query
+description:
+  $ref: './skip#description.md'
+required: false
+schema:
+  type: integer
+  format: int32
+  minimum: 0
+  default: 0
+  examples:
+    - 0

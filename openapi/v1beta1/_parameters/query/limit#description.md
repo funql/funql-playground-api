@@ -1,0 +1,1 @@
+The `limit` query string parameter restricts the number of items to return at one time.

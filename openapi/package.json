@@ -1,0 +1,13 @@
+{
+  "name": "funql-playground-api-oas",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "bundle": "redocly bundle v1beta1/openapi.yaml --output=./dist/v1beta1.yaml",
+    "lint": "redocly lint ./dist/v1beta1.yaml --format=github-actions --skip-rule=no-invalid-media-type-examples --skip-rule=no-unused-components",
+    "build-docs": "redocly build-docs ./dist/v1beta1.yaml --output=./build/index.html"
+  },
+  "devDependencies": {
+    "@redocly/cli": "^1.34.2"
+  }
+}

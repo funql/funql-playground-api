@@ -1,0 +1,10 @@
+description: Bad request error. This is mostly for syntax errors (e.g. incorrect JSON format), for semantic errors see
+  status `422`.
+content:
+  application/problem+json:
+    schema:
+      $ref: '../_schemas/ProblemDetails.yaml'
+    example:
+      type: https://datatracker.ietf.org/doc/html/rfc9110#section-15.5.1
+      title: Failed to parse body
+      status: 400
