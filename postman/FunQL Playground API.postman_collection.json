@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "73c603de-9984-49ee-bfcd-f1b285f1ae23",
+		"name": "FunQL Playground API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44385494",
+		"_collection_link": "https://www.postman.com/funqlio/funql/collection/hb88ymo/funql-playground-api?action=share&source=collection_link&creator=44385494"
+	},
+	"item": [
+		{
+			"name": "v1beta1",
+			"item": [
+				{
+					"name": "designers",
+					"item": [
+						{
+							"name": "List all designers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseApiUrl}}/v1beta1/designers?limit&skip&sort&filter&count",
+									"host": [
+										"{{baseApiUrl}}"
+									],
+									"path": [
+										"v1beta1",
+										"designers"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "skip",
+											"value": ""
+										},
+										{
+											"key": "sort",
+											"value": ""
+										},
+										{
+											"key": "filter",
+											"value": ""
+										},
+										{
+											"key": "count",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "minifigures",
+					"item": [
+						{
+							"name": "List all minifigures",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseApiUrl}}/v1beta1/minifigures?limit&skip&sort&filter&count",
+									"host": [
+										"{{baseApiUrl}}"
+									],
+									"path": [
+										"v1beta1",
+										"minifigures"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "skip",
+											"value": ""
+										},
+										{
+											"key": "sort",
+											"value": ""
+										},
+										{
+											"key": "filter",
+											"value": ""
+										},
+										{
+											"key": "count",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sets",
+					"item": [
+						{
+							"name": "List all sets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseApiUrl}}/v1beta1/sets?limit&skip&sort&filter&count",
+									"host": [
+										"{{baseApiUrl}}"
+									],
+									"path": [
+										"v1beta1",
+										"sets"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "skip",
+											"value": ""
+										},
+										{
+											"key": "sort",
+											"value": ""
+										},
+										{
+											"key": "filter",
+											"value": ""
+										},
+										{
+											"key": "count",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseApiUrl",
+			"value": "https://api.play.funql.io"
+		}
+	]
+}
