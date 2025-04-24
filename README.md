@@ -3,6 +3,7 @@
 # FunQL Playground API
 
 [![License: GPLv2/Commercial](https://img.shields.io/badge/license-GPLv2%20or%20Commercial-orange.svg)](https://github.com/funql/funql-playground-api/blob/main/LICENSE)
+[![Build status](https://github.com/funql/funql-playground-api/workflows/build/badge.svg)](https://github.com/funql/funql-playground-api/actions/workflows/build.yml)
 
 The FunQL Playground API allows developers to experiment with [FunQL](https://funql.io/) — the Functional Query Language
 — through a simple REST interface.
