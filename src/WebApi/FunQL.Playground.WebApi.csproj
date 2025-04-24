@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <ItemGroup>
+        <PackageReference Include="NodaTime.Serialization.SystemTextJson" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Application\FunQL.Playground.Application.csproj" />
+      <ProjectReference Include="..\Infrastructure\FunQL.Playground.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>
