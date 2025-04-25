@@ -1,0 +1,7 @@
+services:
+  funql-playground-api:
+    image: funql-playground-api
+    build:
+      # Dockerfile is based on project root
+      context: ../../
+      dockerfile: src/WebApi/Dockerfile
