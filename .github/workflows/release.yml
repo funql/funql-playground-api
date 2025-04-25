@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: release
+on:
+  # For testing, we will only allow manual activation for now
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          create_credentials_file: true
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDP }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+          
+      - name: Configure Docker to use gcloud as a credential helper
+        run: gcloud auth configure-docker ${{ secrets.GCP_LOCATION }}-docker.pkg.dev
+        
+      - name: Set IMAGE environment variable
+        run: |
+          echo "$IMAGE=${{ secrets.GCP_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REPOSITORY }}/funql-playground-api" >> $GITHUB_ENV
+
+      - name: Build local image using compose
+        run: docker compose -f src\WebApi\compose.build.yaml build funql-playground-api
+        
+      - name: Tag image with :latest for GCP
+        run: docker tag funql-playground-api ${{ env.IMAGE }}:latest
+
+      - name: Tag image with :{{version}} for GCP
+        # For testing, we will use 1.0.0, but this could come from the GitHub tag that got pushed
+        run: docker tag funql-playground-api ${{ env.IMAGE }}:1.0.0
+        
+      - name: Push image to GCP
+        run: docker push --all-tags ${{ env.IMAGE }}
