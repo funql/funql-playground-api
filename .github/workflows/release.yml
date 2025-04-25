@@ -2,8 +2,16 @@
 
 name: release
 on:
-  # For testing, we will only allow manual activation for now
-  workflow_dispatch:
+  push:
+    tags:
+      # Run on release version tags (e.g. 1.0.0)
+      - "[0-9]+.[0-9]+.[0-9]+"
+      # Run on alpha version tags (e.g. 1.0.0-alpha01)
+      - "[0-9]+.[0-9]+.[0-9]+-alpha[0-9][0-9]"
+      # Run on beta version tags (e.g. 1.0.0-beta01)
+      - "[0-9]+.[0-9]+.[0-9]+-beta[0-9][0-9]"
+      # Run on rc version tags (e.g. 1.0.0-rc01)
+      - "[0-9]+.[0-9]+.[0-9]+-rc[0-9][0-9]"
 
 jobs:
   build:
@@ -39,8 +47,7 @@ jobs:
         run: docker tag funql-playground-api ${{ env.IMAGE }}:latest
 
       - name: Tag image with :{{version}} for GCP
-        # For testing, we will use 1.0.0, but this could come from the GitHub tag that got pushed
-        run: docker tag funql-playground-api ${{ env.IMAGE }}:1.0.0
+        run: docker tag funql-playground-api ${{ env.IMAGE }}:${{ github.ref_name }}
         
       - name: Push image to GCP
         run: docker push --all-tags ${{ env.IMAGE }}
