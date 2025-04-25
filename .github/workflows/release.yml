@@ -33,7 +33,7 @@ jobs:
           echo "IMAGE=${{ secrets.GCP_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REPOSITORY }}/funql-playground-api" >> $GITHUB_ENV
 
       - name: Build local image using compose
-        run: docker compose -f src\WebApi\compose.build.yaml build funql-playground-api
+        run: docker compose -f src/WebApi/compose.build.yaml build funql-playground-api
         
       - name: Tag image with :latest for GCP
         run: docker tag funql-playground-api ${{ env.IMAGE }}:latest
