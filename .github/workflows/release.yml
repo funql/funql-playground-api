@@ -30,7 +30,7 @@ jobs:
         
       - name: Set IMAGE environment variable
         run: |
-          echo "$IMAGE=${{ secrets.GCP_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REPOSITORY }}/funql-playground-api" >> $GITHUB_ENV
+          echo "IMAGE=${{ secrets.GCP_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REPOSITORY }}/funql-playground-api" >> $GITHUB_ENV
 
       - name: Build local image using compose
         run: docker compose -f src\WebApi\compose.build.yaml build funql-playground-api
