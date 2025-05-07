@@ -4,3 +4,4 @@ id,name,set_number,pieces,price,designer_id,launch_time,packaging_type_id,theme_
 255fe9a9-acb5-445b-98f1-092cfe4c2272,"LEGO DC Batman Batmobile Tumbler",76240,2049,269.99,939bc0a7-6ec0-4a4c-ba5c-78feafb34d15,2021-11-01 00:00:00.000000 +00:00,1,1
 7e2f89ad-c69f-4bf5-a86c-60b48d793a7b,"LEGO Harry Potter Hogwarts Castle",71043,6020,469.99,bace78ea-9bcf-481a-97b7-907605f254a5,2018-09-01 00:00:00.000000 +00:00,1,4
 36fa1db6-f5e6-4b97-8f88-ab99a3aab971,"LEGO Horizon Forbidden West Tallneck",76989,1222,89.99,2540774f-20f3-42bd-81b2-96ca0fcb543a,2022-05-01 00:00:00.000000 +00:00,1,5
+dbb6d273-c3b8-463d-8195-c63d6b641e47,"LEGO Stranger Things The Upside Down",75810,2287,199.99,5d70a1d6-b5c8-41e3-8cc9-0503adaec5fa,2019-06-01 00:00:00.000000 +00:00,1,11
