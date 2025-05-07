@@ -40,4 +40,7 @@ public enum Theme
     /// <summary>Technic.</summary>
     [JsonStringEnumMemberName("TECHNIC")] 
     Technic = 10,
+    /// <summary>Stranger things.</summary>
+    [JsonStringEnumMemberName("STRANGER_THINGS")] 
+    StrangerThings = 11,
 }
