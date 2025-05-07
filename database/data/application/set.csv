@@ -7,3 +7,4 @@ id,name,set_number,pieces,price,designer_id,launch_time,packaging_type_id,theme_
 dbb6d273-c3b8-463d-8195-c63d6b641e47,"LEGO Stranger Things The Upside Down",75810,2287,199.99,5d70a1d6-b5c8-41e3-8cc9-0503adaec5fa,2019-06-01 00:00:00.000000 +00:00,1,11
 7e06b6ef-cc2c-43c8-bd86-7f57e6f067b0,"LEGO Icons Back to the Future Time Machine",10300,1872,199.99,a4eb2eab-5e09-451b-9c34-8498a96c2765,2022-04-01 00:00:00.000000 +00:00,1,5
 78ff8cd0-cba4-45f2-82e8-4d97dd2561a6,"LEGO Icons McLaren MP4/4 & Ayrton Senna",10330,693,79.99,2b0ff261-04c8-4d80-946b-4893f21a70e2,2024-03-01 00:00:00.000000 +00:00,1,5
+7dd82bbe-6f92-4e2c-a293-305644c66a4e,"LEGO Ideas WALL-E",21303,677,49.99,55c6ba29-fa48-4357-b221-cae954b3875b,2015-09-01 00:00:00.000000 +00:00,1,6
