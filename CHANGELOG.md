@@ -7,4 +7,11 @@ https://common-changelog.org/).
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [Unreleased]
+
+## [1.0.0] - 2025-05-07
+
+Initial release.
+
+[unreleased]: https://github.com/funql/funql-playground-api/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/funql/funql-playground-api/releases/tag/1.0.0
