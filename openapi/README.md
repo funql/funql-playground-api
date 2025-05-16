@@ -33,6 +33,8 @@ generate API reference documentation.
 ├── _schemas/                          # Reusable schemas (data models)
 ├── _securitySchemes/                  # Reusable security schemes (e.g., OAuth 2, API keys)
 ├── <endpoint>/                        # Folder per endpoint group
+│   ├── _parameters/                   # Endpoint-specific parameters
+│   │   └── path/                      # Path parameters
 │   ├── _paths/                        # Individual operations
 │   │   ├── <endpoint>#description.md  # Markdown description for the operation
 │   │   └── <endpoint>.yaml            # Path and method definitions
@@ -44,4 +46,69 @@ generate API reference documentation.
 ├── _securitySchemes.yaml              # References all reusable security schemes
 ├── info#description.md                # Markdown description for the top-level "info" section
 └── openapi.yaml                       # Main entrypoint for Redocly CLI
+```
+
+### Naming conventions
+
+We use consistent naming conventions for files and folders to keep the specification readable and maintainable.
+
+#### Folder naming
+
+- Use **kebab-case** for folder names, including endpoint groups (e.g., `lego-sets/`).
+- Common folders for reusable components (like `_schemas`, `_parameters`) are prefixed with an underscore to indicate
+  internal reuse.
+
+#### File naming
+
+Naming style is based on the component type:
+
+| Type       | Convention             | Example            |
+|------------|------------------------|--------------------|
+| Headers    | Hyphenated-Pascal-Case | `Total-Count.yaml` |
+| Parameters | camelCase              | `setId.yaml`       |
+| Paths      | kebab-case             | `sets.yaml`        |
+| Schemas    | PascalCase             | `Set.yaml`         |
+
+#### Markdown files
+
+Markdown files (`*.md`) provide rich descriptions in the generated API documentation. They are referenced using `$ref`
+to populate specific fields such as `description`.
+
+- The base filename must match the file that references it.
+- The fragment (after `#`) indicates the target property.
+- Place the Markdown file in the same folder as the referencing file.
+
+For example, `sets#description.md` provides the `description` for the `/sets` path defined in `sets.yaml`.
+
+#### File extensions
+
+- Use `.yaml` (not `.yml`) for OpenAPI definition files.
+- Use `.md` for Markdown description files.
+
+#### Suffixes for path files
+
+Use suffixes to distinguish parameterized paths:
+
+- `{paramName}` in a path is expressed with a suffix in the file name.
+- For example, `sets_{setId}.yaml` defines operations for `/sets/{setId}`.
+
+This helps keep file names descriptive and unambiguous.
+
+#### Example
+
+```
+<version>/                     #
+├── _headers/                  #
+│   └── Total-Count.yaml       # Header 'Total-Count'
+├── _parameters/               #
+│   └── query/                 #
+│       └── skip.yaml          # Query parameter 'skip'
+├── sets/                      #
+│   ├── _parameters/           #
+│   │   └── setId.yaml         # Path parameter 'setId'
+│   ├── _paths/                #
+│   │   ├── sets.yaml          # Operations for '/sets' path
+│   │   └── sets_{setId}.yaml  # Operations for '/sets/{setId}' path
+│   └── _schemas/              #
+│       └── Set.yaml           # Data model 'Set'
 ```
