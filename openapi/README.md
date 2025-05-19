@@ -103,12 +103,12 @@ This helps keep file names descriptive and unambiguous.
 ├── _parameters/               #
 │   └── query/                 #
 │       └── skip.yaml          # Query parameter 'skip'
-├── sets/                      #
-│   ├── _parameters/           #
-│   │   └── setId.yaml         # Path parameter 'setId'
-│   ├── _paths/                #
-│   │   ├── sets.yaml          # Operations for '/sets' path
-│   │   └── sets_{setId}.yaml  # Operations for '/sets/{setId}' path
-│   └── _schemas/              #
-│       └── Set.yaml           # Data model 'Set'
+└── sets/                      #
+    ├── _parameters/           #
+    │   └── setId.yaml         # Path parameter 'setId'
+    ├── _paths/                #
+    │   ├── sets.yaml          # Operations for '/sets' path
+    │   └── sets_{setId}.yaml  # Operations for '/sets/{setId}' path
+    └── _schemas/              #
+        └── Set.yaml           # Data model 'Set'
 ```
