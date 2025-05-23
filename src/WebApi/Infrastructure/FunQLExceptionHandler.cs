@@ -47,6 +47,8 @@ public class FunQLExceptionHandler(IProblemDetailsService problemDetailsService)
         if (problemDetails == null)
             return false;
 
+        // StatusCode will be 500 by default if we don't explicitly set it
+        httpContext.Response.StatusCode = problemDetails.Status ?? 500;
         return await _problemDetailsService.TryWriteAsync(new ProblemDetailsContext
         {
             Exception = exception,
