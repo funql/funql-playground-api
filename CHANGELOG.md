@@ -9,6 +9,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.0.2] - 2025-06-17
+
+### Removed
+
+- Remove `millisecond()` field function support as it's not supported by Npgsql, the EFCore data source used
+
 ## [1.0.1] - 2025-05-23
 
 ### Fixed
@@ -19,6 +25,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 Initial release.
 
-[unreleased]: https://github.com/funql/funql-playground-api/compare/1.0.1...HEAD
+[unreleased]: https://github.com/funql/funql-playground-api/compare/1.0.2...HEAD
+[1.0.2]: https://github.com/funql/funql-playground-api/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/funql/funql-playground-api/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/funql/funql-playground-api/releases/tag/1.0.0
