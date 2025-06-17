@@ -86,8 +86,16 @@ public class SetSchemaConfigurator : ISchemaConfigurator
 
         set.SimpleField(it => it.LaunchTime)
             .HasName(Set.LaunchTimePropertyName)
-            .SupportsFilter(it => it.SupportsDateTimeFilterFunctions())
-            .SupportsSort(it => it.SupportsDateTimeFieldFunctions());
+            .SupportsFilter(it => it
+                .SupportsDateTimeFilterFunctions()
+                // EFCore uses Npgsql, which does not support DateTime.Millisecond, so disable it
+                .SupportsMillisecond(false)
+            )
+            .SupportsSort(it => it
+                .SupportsDateTimeFieldFunctions()
+                // EFCore uses Npgsql, which does not support DateTime.Millisecond, so disable it
+                .SupportsMillisecond(false)
+            );
 
         set.SimpleField(it => it.PackagingType)
             .HasName(Set.PackagingTypePropertyName)
