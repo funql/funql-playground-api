@@ -20,7 +20,6 @@ Returns a list of sets.
 |                        |          | `hour`        | `hour(launchTime)`            |
 |                        |          | `minute`      | `minute(launchTime)`          |
 |                        |          | `second`      | `second(launchTime)`          |
-|                        |          | `millisecond` | `millisecond(launchTime)`     |
 | `minifigures.$it.name` | `string` | `lower`       | `lower(minifigures.$it.name)` |
 |                        |          | `upper`       | `upper(minifigures.$it.name)` |
 
