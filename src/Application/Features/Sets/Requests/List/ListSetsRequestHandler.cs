@@ -3,10 +3,10 @@
 
 using FunQL.Core.Requests.Nodes;
 using FunQL.Linq.Schemas.Extensions;
+using FunQL.Playground.Application.Abstractions.Requests;
 using FunQL.Playground.Application.Features.Sets.Extensions;
 using FunQL.Playground.Application.Features.Sets.Models;
 using FunQL.Playground.Domain.Interfaces;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace FunQL.Playground.Application.Features.Sets.Requests.List;

@@ -6,7 +6,7 @@
 
     <ItemGroup>
       <PackageReference Include="FunQL" />
-      <PackageReference Include="MediatR" />
+      <PackageReference Include="Scrutor" />
     </ItemGroup>
 
 </Project>

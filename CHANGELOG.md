@@ -9,6 +9,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+### Added
+
+- Add custom request/handler implementation to replace MediatR
+
+### Changed
+
+- Update all endpoints to use the new request/handler implementation
+
+### Removed
+
+- Remove MediatR due to its new license structure
+
 ## [1.0.2] - 2025-06-17
 
 ### Removed
