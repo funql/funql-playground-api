@@ -1,7 +1,9 @@
 ﻿// Copyright 2025 Xtracked
 // SPDX-License-Identifier: GPL-2.0-only OR Commercial
 
+using System.Reflection;
 using System.Text.Json;
+using FunQL.Playground.Application.Abstractions.Requests;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FunQL.Playground.Application;
@@ -21,10 +23,16 @@ public static class ServiceCollectionExtensions
         Func<IServiceProvider, JsonSerializerOptions> jsonSerializerOptionsProvider
     )
     {
-        services.AddMediatR(config =>
-        {
-            config.RegisterServicesFromAssembly(typeof(ServiceCollectionExtensions).Assembly);
-        });
+        services.AddTransient<IDispatcher, Dispatcher>();
+        services.Scan(scan =>
+            scan.FromAssemblies(Assembly.GetExecutingAssembly())
+                .AddClasses(classes => classes.AssignableTo(typeof(IRequestHandler<,>)))
+                .AsImplementedInterfaces()
+                .WithScopedLifetime()
+                .AddClasses(classes => classes.AssignableTo(typeof(IPipelineBehavior<,>)))
+                .AsImplementedInterfaces()
+                .WithScopedLifetime()
+        );
         
         services.AddSingleton<ApiSchema>(it => new ApiSchema(jsonSerializerOptionsProvider(it)));
         
