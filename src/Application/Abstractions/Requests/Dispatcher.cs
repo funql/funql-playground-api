@@ -5,14 +5,18 @@ using System.Collections.Concurrent;
 
 namespace FunQL.Playground.Application.Abstractions.Requests;
 
+/// <summary>Implementation of the dispatcher that uses <see cref="IServiceProvider"/> to handle the requests.</summary>
 public class Dispatcher(
     IServiceProvider serviceProvider
 ) : IDispatcher
 {
+    /// <summary>Cached pipelines.</summary>
     private static readonly ConcurrentDictionary<Type, RequestPipelineBase> RequestPipelines = new();
     
+    /// <summary>Provider to get the request handlers.</summary>
     private readonly IServiceProvider _serviceProvider = serviceProvider;
     
+    /// <inheritdoc/>
     public Task<TResponse> Send<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken)
     {
         var handler = (RequestPipeline<TResponse>)RequestPipelines.GetOrAdd(request.GetType(), static requestType =>
