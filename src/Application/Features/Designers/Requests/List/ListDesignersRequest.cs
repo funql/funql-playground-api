@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: GPL-2.0-only OR Commercial
 
 using FunQL.Core.Requests.Nodes;
+using FunQL.Playground.Application.Abstractions.Requests;
 using FunQL.Playground.Application.Features.Designers.Models;
-using MediatR;
 
 namespace FunQL.Playground.Application.Features.Designers.Requests.List;
 
