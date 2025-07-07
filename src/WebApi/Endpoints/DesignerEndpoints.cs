@@ -1,10 +1,10 @@
 ﻿// Copyright 2025 Xtracked
 // SPDX-License-Identifier: GPL-2.0-only OR Commercial
 
+using FunQL.Playground.Application.Abstractions.Requests;
 using FunQL.Playground.Application.Features.Designers.Models;
 using FunQL.Playground.Application.Features.Designers.Requests.List;
 using FunQL.Playground.WebApi.CustomResults;
-using MediatR;
 
 namespace FunQL.Playground.WebApi.Endpoints;
 
@@ -26,7 +26,8 @@ public static class DesignerEndpoints
     /// <param name="limit">Optional limit on the number of items returned.</param>
     /// <param name="skip">Optional number of items to skip.</param>
     /// <param name="count">Optional flag to include the total count of matching records.</param>
-    /// <param name="sender"><see cref="ISender"/> to use for sending the request via <see cref="MediatR"/>.</param>
+    /// <param name="dispatcher"><see cref="IDispatcher"/> to dispatch the request.</param>
+    /// <param name="cancellationToken">Token to cancel async requests.</param>
     /// <returns>
     /// The <see cref="ResultsExtensions.OkListResponse{T}"/> with the list of <see cref="Designer"/>.
     /// </returns>
@@ -36,12 +37,13 @@ public static class DesignerEndpoints
         string? limit,
         string? skip,
         string? count,
-        ISender sender
+        IDispatcher dispatcher,
+        CancellationToken cancellationToken
     )
     {
         var request = new ListDesignersRequest(filter, sort, limit, skip, count);
 
-        var result = await sender.Send(request);
+        var result = await dispatcher.Send(request, cancellationToken);
 
         return Results.Extensions.OkListResponse(result);
     }
