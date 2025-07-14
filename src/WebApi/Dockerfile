@@ -27,7 +27,7 @@ RUN dotnet publish "src/WebApi/FunQL.Playground.WebApi.csproj" -c Release -o /pu
 
 # Use Microsoft's official runtime .NET image
 # https://hub.docker.com/_/microsoft-dotnet-aspnet
-FROM mcr.microsoft.com/dotnet/aspnet:9.0.6-alpine3.21 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:9.0.7-alpine3.21 AS runtime
 WORKDIR /app
 COPY --from=publish /publish ./
 
