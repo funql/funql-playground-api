@@ -1,6 +1,6 @@
 ﻿# Use Microsoft's official build .NET image
 # https://hub.docker.com/_/microsoft-dotnet-sdk
-FROM mcr.microsoft.com/dotnet/sdk:9.0.302-alpine3.21 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0.303-alpine3.21 AS build
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
