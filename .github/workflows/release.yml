@@ -21,7 +21,7 @@ jobs:
       id-token: write
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Authenticate with Google Cloud
         uses: google-github-actions/auth@v2
