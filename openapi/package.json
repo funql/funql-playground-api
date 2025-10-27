@@ -8,6 +8,6 @@
     "build-docs": "redocly build-docs ./dist/v1beta1.yaml --output=./build/index.html"
   },
   "devDependencies": {
-    "@redocly/cli": "^2.7.0"
+    "@redocly/cli": "^2.8.0"
   }
 }
